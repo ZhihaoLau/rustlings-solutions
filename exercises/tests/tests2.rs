@@ -2,11 +2,20 @@
 // This test has a problem with it -- make the test compile! Make the test
 // pass! Make the test fail! Scroll down for hints :)
 
+mod for_test {
+    pub fn is_it_cool() -> bool {
+        true
+    }
+}
+
 #[cfg(test)]
 mod tests {
+    use for_test::is_it_cool;
+
     #[test]
     fn you_can_assert_eq() {
-        assert_eq!();
+        let cool = is_it_cool();
+        assert_eq!(cool, true);
     }
 }
 
